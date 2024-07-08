@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 15:51:00 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/08 20:50:35 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/08 20:54:24 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_list	*NewNode(int value)
 
 void	PrintListNums(t_list *head)
 {
-	t_list *buff;
+	t_list	*buff;
 
 	buff = head;
 	while(buff != NULL)
@@ -61,7 +61,7 @@ void	PutInHead (t_list **list, t_list *new_node)
 
 t_list	*FindTail(t_list *head)
 {
-	t_list *buff;
+	t_list	*buff;
 
 	while(buff->next)
 		buff = buff->next;
