@@ -6,11 +6,11 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 16:09:44 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/10 16:18:22 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/11 20:12:45 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_header.h"
+#include "../push_swap_header.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 16:34:24 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/10 20:34:01 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/11 19:55:59 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,26 @@
 typedef struct s_list
 {
 	int			value;
+	int 		index;
 	struct s_list	*next;
 }				t_list;
 
 // Actions
-int s (t_list **list);
+int	s (t_list **list);
 int	sa(t_list **list_a);
 int	sb(t_list **list_b);
-int ss (t_list **list_a, t_list **list_b);
-int p(t_list **list_in, t_list **list_out);
+int	ss (t_list **list_a, t_list **list_b);
+int	p(t_list **list_in, t_list **list_out);
+int	pa(t_list **list_a, t_list **list_b);
+int	pb(t_list **list_b, t_list **list_a);
+int	r(t_list **list);
+int	ra(t_list **list_a);
+int	rb(t_list **list_b);
+int	rr(t_list **list_a, t_list **list_b);
+int	reverse_r(t_list **list);
+int	rra(t_list **list_a);
+int	rrb(t_list **list_b);
+int	rrr(t_list **list_a, t_list **list_b);
 // Help functions
 int	list_size(t_list *head);
 void	print_list_nums(t_list *head);

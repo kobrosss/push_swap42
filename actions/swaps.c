@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   actions.c                                          :+:      :+:    :+:   */
+/*   swaps.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/08 21:13:55 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/10 21:26:26 by rkobelie         ###   ########.fr       */
+/*   Created: 2024/07/11 19:38:50 by rkobelie          #+#    #+#             */
+/*   Updated: 2024/07/11 20:01:19 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_header.h"
+#include "../push_swap_header.h"
 
 int	s(t_list **list)
 {
 	t_list	*first_element;
 	t_list	*second_element;
-	int	first_buff_value;
+	int		first_buff_value;
+	int		first_buff_index;
 
 	if (list_size(*list) < 2)
-		return(-1);
+		return (-1);
 	first_element = *list;
 	second_element = first_element->next;
 	if (!first_element && !second_element)
@@ -28,8 +29,11 @@ int	s(t_list **list)
 		exit(0);
 	}
 	first_buff_value = first_element->value;
+	first_buff_index = first_element->index;
 	first_element->value = second_element->value;
+	first_element->index = second_element->index;
 	second_element->value = first_buff_value;
+	second_element->index = first_buff_index;
 	return (0);
 }
 
@@ -49,9 +53,9 @@ int	sb(t_list **list_b)
 	return (0);
 }
 
-int ss (t_list **list_a, t_list **list_b)
+int	ss(t_list **list_a, t_list **list_b)
 {
-	if ((list_size(*list_a) < 2) || (list_size(*list_b )< 2))
+	if ((list_size(*list_a) < 2) || (list_size(*list_b) < 2))
 	{
 		ft_putstr_fd("One of stacks have less than 2 variables", 1);
 		return (-1);
@@ -61,16 +65,3 @@ int ss (t_list **list_a, t_list **list_b)
 	ft_putstr_fd("ss\n", 1);
 	return (0);
 }
-
-/*int p(t_list **list_in, t_list **list_out)
-{
-	t_list	*buff_out;
-	t_list	*first_element_in;
-	t_list	*first_element_out;
-
-	if (list_size(*list_out) == 0)
-		return (-1);
-	first_element_in = *list_in;
-	first_element_out = *list_out;
-	buff_out = first_element_out;
-}*/

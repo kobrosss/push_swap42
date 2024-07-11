@@ -6,11 +6,11 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 15:51:00 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/10 18:21:40 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/11 20:12:41 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_header.h"
+#include "../push_swap_header.h"
 
 t_list	*make_new_node(int value)
 {
@@ -20,6 +20,7 @@ t_list	*make_new_node(int value)
 	if (!new_node)
 		return (NULL);
 	new_node->value = value;
+	new_node->index = -42;
 	new_node->next = NULL;
 	return (new_node);
 }
@@ -62,8 +63,13 @@ t_list	*find_tail(t_list *head)
 {
 	t_list	*buff;
 
+	buff = head;
 	while (buff->next)
+	{
 		buff = buff->next;
+		if (buff->next == NULL)
+			return(buff);
+	}
 	return (buff);
 }
 
