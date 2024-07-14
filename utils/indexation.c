@@ -6,13 +6,13 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 08:52:48 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/14 09:43:14 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/14 15:25:29 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_header.h"
 
-static t_list	*get_min(t_list **list)
+static t_list	*get_last_min(t_list **list)
 {
 	t_list	*head;
 	t_list	*min;
@@ -37,10 +37,10 @@ void	indexation(t_list **list)
 	int	index;
 
 	index = 0;
-	head = get_min(list);
+	head = get_last_min(list);
 	while(head)
 	{
 		head->index = index++;
-		head = get_min(list);
+		head = get_last_min(list);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 16:52:41 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/12 18:08:13 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/14 18:09:57 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,3 +55,32 @@ int	sort_check(t_list **list)
 	}
 	return (1);
 }
+
+ int	find_distance(t_list **list, int index)
+ {
+	t_list	*head;
+	int	distance;
+
+	distance = 0;
+	head = *list;
+	while (head)
+	{
+		if (head->index == index)
+			break ;
+		distance++;
+		head = head->next;
+	}
+	return (distance);
+ }
+
+ void free_array(t_list *head)
+ {
+	t_list *tmp;
+	while (head)
+	{
+		tmp = head;
+		head = head->next;
+		free(tmp);
+	}
+}
+
