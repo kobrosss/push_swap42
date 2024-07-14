@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 16:34:24 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/14 21:12:45 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/14 21:56:52 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,24 @@ int	rrb(t_list **list_b);
 int	rrr(t_list **list_a, t_list **list_b);
 // Help functions
 int	list_size(t_list *head);
+int	ft_atoi(const char *nptr);
+static void	*ft_free(char **result, size_t position);
+void	free_args(char **str);
+static int	is_smtng_here(int num, char **av, int i);
+static int	isnum(char *num);
+void	check_args(int argc, char **argv);
+static void	ft_word(char const *s, size_t *first, size_t *last, char c);
+static size_t	ft_countwords(char const *s, char c);
+static char	*ft_fill(char const *s, size_t first, size_t last);
+char	**ft_split(char const *s, char c);
 static t_list	*get_last_min(t_list **list);
 static int	get_min(t_list **list, int val);
 int	find_distance(t_list **list, int index);
+int	ft_isdigit(int c);
 static void	until_3(t_list **list_a);
 static int	get_max_bits(t_list **stack);
-/*static void	until_4(t_list **list_a, t_list **list_b);
-static void	until_5(t_list **list_a, t_list **list_b);*/
+static void	until_4(t_list **list_a, t_list **list_b);
+static void	until_5(t_list **list_a, t_list **list_b);
 void	shit_sort(t_list **list_a, t_list **list_b);
 void	indexation(t_list **list);
 void	print_list_nums(t_list *head);
@@ -63,8 +74,4 @@ t_list	*make_new_node(int value);
 int	sort_check(t_list **list);
 void	free_list(t_list **list);
 void free_array(t_list *head);
-
-
-
-
 #endif

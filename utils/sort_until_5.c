@@ -6,24 +6,23 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 13:10:29 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/14 21:16:52 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/14 22:03:29 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_header.h"
 
 static int get_min(t_list **list, int index) {
-    t_list *head = *list;
-    int min = __INT_MAX__;
+	t_list *head = *list;
+	int min = __INT_MAX__;
 
-    while (head)
+	while (head)
 	{
-        if ((head->index < min) && (head->index != index)) {
-            min = head->index;
-        }
-        head = head->next;
-    }
-    return min;
+		if ((head->index < min) && (head->index != index))
+			min = head->index;
+		head = head->next;
+	}
+	return (min);
 }
 
 static void	until_3(t_list **list_a)
@@ -92,7 +91,7 @@ static void	until_5(t_list **list_a, t_list **list_b)
 	if (sort_check(list_a))
 		return ;
 	distance = find_distance(list_a, get_min(list_a, -42));
-	if(distance == 1)
+	if (distance == 1)
 		ra(list_a);
 	else if (distance == 2)
 	{

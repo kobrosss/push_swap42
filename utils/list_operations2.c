@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 16:52:41 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/14 18:09:57 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/14 21:39:26 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,16 @@ int	sort_check(t_list **list)
 		head = head->next;
 		free(tmp);
 	}
+}
+
+void	free_args(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	while (i >= 0)
+		free(str[i--]);
 }
 

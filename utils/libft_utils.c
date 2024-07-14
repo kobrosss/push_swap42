@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 16:09:44 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/11 20:12:45 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/14 21:32:34 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,50 @@ void	ft_putstr_fd(char *s, int fd)
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
+}
+
+int	ft_isdigit(int c)
+{
+	int	i;
+
+	i = 0;
+	if (c >= 48 && c <= 57)
+	{
+		i++;
+	}
+	if (i == 1)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
+
+int	ft_atoi(const char *nptr)
+{
+	size_t	i;
+	size_t	res;
+	size_t	sign;
+
+	i = 0;
+	res = 0;
+	sign = 1;
+	while (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\n'
+		|| nptr[i] == '\r' || nptr[i] == '\f' || nptr[i] == '\v')
+		i++;
+	if (nptr[i] == '-')
+	{
+		sign = sign * -1;
+		i++;
+	}
+	else if (nptr[i] == '+')
+		i++;
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		res = res * 10 + (nptr[i] - '0');
+		i++;
+	}
+	return (sign * res);
 }
