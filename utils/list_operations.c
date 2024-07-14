@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 15:51:00 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/11 20:12:41 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/12 16:54:32 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,21 +38,6 @@ void	print_list_nums(t_list *head)
 	}
 }
 
-int	list_size(t_list *head)
-{
-	int		i;
-	t_list	*buff;
-
-	i = 0;
-	buff = head;
-	while (buff)
-	{
-		buff = buff->next;
-		i++;
-	}
-	return (i);
-}
-
 void	put_in_head(t_list **list, t_list *new_node)
 {
 	new_node->next = *list;
@@ -68,7 +53,7 @@ t_list	*find_tail(t_list *head)
 	{
 		buff = buff->next;
 		if (buff->next == NULL)
-			return(buff);
+			return (buff);
 	}
 	return (buff);
 }
