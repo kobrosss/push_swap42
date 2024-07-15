@@ -6,21 +6,11 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 18:21:53 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/15 15:12:59 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/15 20:28:04 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_header.h"
-/*#include "actions/push.c"
-#include "actions/swaps.c"
-#include "actions/rotate.c"
-#include "actions/reverse_rotate.c"
-#include "utils/list_operations.c"
-#include "utils/list_operations2.c"
-#include "utils/libft_utils.c"
-#include "utils/radix.c"
-#include "utils/indexation.c"
-#include "utils/sort_until_5.c"*/
 
 static void	init_list(t_list **list, int ac, char **av)
 {
