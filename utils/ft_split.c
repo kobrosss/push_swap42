@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 17:45:56 by rkobeliev         #+#    #+#             */
-/*   Updated: 2024/07/14 21:34:18 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/15 19:32:58 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,9 @@ static char	*ft_fill(char const *s, size_t first, size_t last)
 	size_t	position;
 
 	position = 0;
-	word = malloc(sizeof(char) * (last - first) + 1);
+	word = ft_calloc(last - first + 1, sizeof(char));
 	if (word == NULL)
 		return (NULL);
-	word[last - first] = 0;
 	while (first < last)
 	{
 		word[position] = s[first];
@@ -80,10 +79,10 @@ char	**ft_split(char const *s, char c)
 	size_t	last;
 	size_t	position;
 
-	result = malloc(sizeof(char *) * (ft_countwords(s, c) + 1));
+	result = ft_calloc(ft_countwords(s, c) + 1, sizeof(char *));
 	if (result == NULL)
 		return (NULL);
-	result[ft_countwords(s, c)] = 0;
+	result[ft_countwords(s, c)] = NULL;
 	last = 0;
 	first = 0;
 	position = 0;

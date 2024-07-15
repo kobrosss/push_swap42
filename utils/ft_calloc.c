@@ -3,33 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkobeliev <rkobeliev@student.42.fr>        +#+  +:+       +#+        */
+/*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/06 19:37:09 by rkobeliev         #+#    #+#             */
-/*   Updated: 2024/03/18 20:00:22 by rkobeliev        ###   ########.fr       */
+/*   Created: 2024/07/15 19:33:54 by rkobelie          #+#    #+#             */
+/*   Updated: 2024/07/15 20:10:51 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap_header.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	void	*data;
-	size_t	mem;
+	void	*ptr;
+	char	*p;
+	size_t	total_size;
 
-	mem = nmemb * size;
-	if (mem && mem / nmemb != size)
-		return (0);
-	if (nmemb == 0 || size == 0)
+	p = NULL;
+	total_size = 0;
+	ptr = malloc(count * size);
+	if (ptr != NULL)
 	{
-		nmemb = 1;
-		size = 1;
+		p = ptr;
+		total_size = count * size;
+		while (total_size--)
+			*p++ = 0;
 	}
-	if (nmemb > 2147483647 / size)
-		return (NULL);
-	data = malloc(nmemb * size);
-	if (!data)
-		return (NULL);
-	ft_bzero(data, nmemb * size);
-	return (data);
+	return (ptr);
 }

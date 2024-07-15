@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 15:49:42 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/14 21:59:42 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/15 15:07:02 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	radix(t_list **stack_a, t_list **stack_b)
 
 	i = 0;
 	head_a = *stack_a;
-	size = ft_lstsize(head_a);
+	size = list_size(head_a);
 	max_bits = get_max_bits(stack_a);
 	while (i < max_bits)
 	{
@@ -55,7 +55,7 @@ void	radix(t_list **stack_a, t_list **stack_b)
 			else
 				pb(stack_a, stack_b);
 		}
-		while (ft_lstsize(*stack_b) != 0)
+		while (list_size(*stack_b) != 0)
 			pa(stack_a, stack_b);
 		i++;
 	}
