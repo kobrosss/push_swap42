@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   args.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
+/*   By: rkobeliev <rkobeliev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 21:29:01 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/15 20:10:37 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/16 20:33:05 by rkobeliev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,11 @@ int	isnum(char *num)
 	return (1);
 }
 
-static void	handle_error(char *message)
+static void	handle_error(int ac, char **args, char *message)
 {
 	ft_putstr_fd(message, 1);
+	if (ac == 2)
+		free_args(args);
 	exit(0);
 }
 
@@ -77,13 +79,11 @@ void	check_args(int ac, char **av)
 	}
 	while (args[i])
 	{
-		tmp = ft_atoi(args[i]);
 		if (!isnum(args[i]))
-			handle_error("ERROR: It`s not number");
-		if (!is_smtng_here(tmp, args, i))
-			handle_error("ERROR: It`s empty");
-		if (tmp < -2147483648 || tmp > 2147483647)
-			handle_error("ERROR: Number isn`t in INT limits");
+			handle_error(ac, args, "ERROR: It`s not number\n");
+		tmp = ft_atoi(args[i]);
+		if (has_duplicates(args, i, tmp))
+			handle_error(ac, args, "ERROR: Dublicates\n");
 		i++;
 	}
 	if (ac == 2)

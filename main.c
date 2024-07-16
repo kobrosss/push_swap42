@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
+/*   By: rkobeliev <rkobeliev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 18:21:53 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/15 20:28:04 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/16 19:51:10 by rkobeliev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(int ac, char **av)
 	t_list	**list_b;
 
 	if (ac < 2)
-		return (-1);
+		error_exit("ERROR: Line is EMPTY\n");
 	check_args(ac, av);
 	list_a = (t_list **)malloc(sizeof(t_list));
 	list_b = (t_list **)malloc(sizeof(t_list));

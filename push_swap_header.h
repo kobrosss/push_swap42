@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_header.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
+/*   By: rkobeliev <rkobeliev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 16:34:24 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/15 19:37:32 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/16 21:56:16 by rkobeliev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stddef.h>
 # include <stdio.h>
 # include <unistd.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -41,6 +42,8 @@ int		rra(t_list **list_a);
 int		rrb(t_list **list_b);
 int		rrr(t_list **list_a, t_list **list_b);
 // Help functions
+char	*ft_itoa(int n);
+void	error_exit(char *message);
 void	free_list(t_list **list);
 void	free_array(t_list *head);
 void	shit_sort(t_list **list_a, t_list **list_b);
@@ -59,6 +62,8 @@ void	until_5(t_list **list_a, t_list **list_b);
 void	free_args(char **str);
 void	check_args(int ac, char **av);
 char	**ft_split(char const *s, char c);
+int		has_duplicates(char **args, int current_index, int value);
+int		ft_strcmp(char *s1, char *s2);
 int		get_min(t_list **list, int index);
 int		list_size(t_list *head);
 int		ft_atoi(const char *nptr);
