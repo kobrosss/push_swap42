@@ -6,7 +6,7 @@
 /*   By: rkobeliev <rkobeliev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 18:21:53 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/17 16:52:16 by rkobeliev        ###   ########.fr       */
+/*   Updated: 2024/07/17 17:11:44 by rkobeliev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ int	main(int ac, char **av)
 	t_list	**list_a;
 	t_list	**list_b;
 
-	if (ac != 2)
-		error_exit("ERROR: Incorrect amount of arguments\n");
+	if (ac == 1)
+		error_exit("ERROR: It`EMPTY\n");
 	check_args(ac, av);
 	list_a = (t_list **)malloc(sizeof(t_list));
 	list_b = (t_list **)malloc(sizeof(t_list));
