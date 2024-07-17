@@ -6,7 +6,7 @@
 /*   By: rkobeliev <rkobeliev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 21:29:01 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/17 21:44:58 by rkobeliev        ###   ########.fr       */
+/*   Updated: 2024/07/17 23:20:20 by rkobeliev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static void	handle_error(int ac, char **args, char *message)
 void	check_args(int ac, char **av)
 {
 	int		i;
-	long	tmp;
+	int		tmp;
 	char	**args;
 
 	i = 0;
@@ -80,13 +80,11 @@ void	check_args(int ac, char **av)
 	{
 		if (!isnum(args[i]))
 			handle_error(ac, args, "ERROR\n");
-		if (is_smtng_here(tmp, av, i) && ac > 2)
-			handle_error(ac, args, "ERROR\n");
-		tmp = ft_atoi(args[i]);
+		tmp = ft_atoi(args[i]);		
 		if (has_duplicates(args, i, tmp))
 			handle_error(ac, args, "ERROR\n");
 		i++;
 	}
-	if (ac == 2)
+	if(ac == 2)
 		free_args(args);
 }

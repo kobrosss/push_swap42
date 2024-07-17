@@ -6,7 +6,7 @@
 /*   By: rkobeliev <rkobeliev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 18:21:53 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/17 17:11:44 by rkobeliev        ###   ########.fr       */
+/*   Updated: 2024/07/17 22:26:55 by rkobeliev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	init_list(t_list **list, int ac, char **av)
 		i++;
 	}
 	indexation(list);
-	if (ac == 2)
+	if(ac == 2)
 		free_args(args);
 }
 
