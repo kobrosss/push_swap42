@@ -6,7 +6,7 @@
 /*   By: rkobeliev <rkobeliev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 19:26:22 by rkobeliev         #+#    #+#             */
-/*   Updated: 2024/07/16 19:55:43 by rkobeliev        ###   ########.fr       */
+/*   Updated: 2024/07/17 21:36:13 by rkobeliev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_atoi(const char *nptr)
 	{
 		if (res > INT_MAX / 10
 			|| (res == INT_MAX / 10 && (nptr[i] - '0') > INT_MAX % 10))
-			error_exit("ERROR: Value isn't in INT limits\n");
+			error_exit("ERROR\n");
 		res = res * 10 + (nptr[i] - '0');
 		i++;
 	}
