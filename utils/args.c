@@ -6,7 +6,7 @@
 /*   By: rkobeliev <rkobeliev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 21:29:01 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/16 20:33:05 by rkobeliev        ###   ########.fr       */
+/*   Updated: 2024/07/17 16:54:22 by rkobeliev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	check_args(int ac, char **av)
 	while (args[i])
 	{
 		if (!isnum(args[i]))
-			handle_error(ac, args, "ERROR: It`s not number\n");
+			handle_error(ac, args, "ERROR: One or few argument isn`t number\n");
 		tmp = ft_atoi(args[i]);
 		if (has_duplicates(args, i, tmp))
 			handle_error(ac, args, "ERROR: Dublicates\n");
