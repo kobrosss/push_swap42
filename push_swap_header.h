@@ -6,7 +6,7 @@
 /*   By: rkobeliev <rkobeliev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 16:34:24 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/17 22:26:19 by rkobeliev        ###   ########.fr       */
+/*   Updated: 2024/07/18 18:42:54 by rkobeliev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stdbool.h>
 
 typedef struct s_list
 {
@@ -69,7 +70,6 @@ int		list_size(t_list *head);
 int		ft_atoi(const char *nptr);
 int		find_distance(t_list **list, int index);
 int		ft_isdigit(int c);
-int		is_smtng_here(int num, char **av, int i);
 int		isnum(char *num);
 int		sort_check(t_list **list);
 t_list	*find_tail(t_list *head);

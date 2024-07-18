@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+         #
+#    By: rkobeliev <rkobeliev@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/15 15:12:09 by rkobelie          #+#    #+#              #
-#    Updated: 2024/07/15 15:32:18 by rkobelie         ###   ########.fr        #
+#    Updated: 2024/07/18 18:48:24 by rkobeliev        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJS = ${SRCS:.c=.o}
 
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Iincludes
+CFLAGS = -Wall -Wextra -Werror -Iincludes -g
 RM = rm -rf
 
 all: ${NAME} ${CHECK}

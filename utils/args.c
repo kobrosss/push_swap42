@@ -6,7 +6,7 @@
 /*   By: rkobeliev <rkobeliev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 21:29:01 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/17 23:20:20 by rkobeliev        ###   ########.fr       */
+/*   Updated: 2024/07/18 18:42:32 by rkobeliev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,6 @@ void	free_args(char **args)
 		i++;
 	}
 	free(args);
-}
-
-int	is_smtng_here(int num, char **av, int i)
-{
-	while (av[i])
-	{
-		if (ft_atoi(av[i]) == num)
-			return (1);
-		i++;
-	}
-	return (0);
 }
 
 int	isnum(char *num)
@@ -80,11 +69,11 @@ void	check_args(int ac, char **av)
 	{
 		if (!isnum(args[i]))
 			handle_error(ac, args, "ERROR\n");
-		tmp = ft_atoi(args[i]);		
+		tmp = ft_atoi(args[i]);
 		if (has_duplicates(args, i, tmp))
 			handle_error(ac, args, "ERROR\n");
 		i++;
 	}
-	if(ac == 2)
+	if (ac == 2)
 		free_args(args);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_operations2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
+/*   By: rkobeliev <rkobeliev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 16:52:41 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/15 18:07:06 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/18 15:40:56 by rkobeliev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
